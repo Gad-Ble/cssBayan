@@ -58,17 +58,49 @@ h1 {
     color: white;
     font-size: 4em;
     font-weight: 900;
+    border-bottom: 1px solid white;
+    padding-bottom: 1rem;
+}
+
+input{
+    appearance: none;
+    width: 0;
+    height: 0;
+    position: absolute;
 }
 
 label {
     color: white;
     font-size: 1.5em;
+    display: block;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
+label:hover{
+    color: red;
+}
+
+
 .image {
+    justify-content: center;
     margin-top: 1em;
+    display: none;
+}
+
+.image-mem{
+    max-width: 40em;
 }
 
 .item {
     margin-top: 1em;
+    border: 1px solid red;
+    padding: 0.4em;
+}
+
+.input:checked ~ .image{
+    display: flex;
+}
+.input:checked ~ label {
+    color: red;
 }
