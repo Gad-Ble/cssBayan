@@ -103,6 +103,7 @@ section {
 
 html {
     height: 100%;
+    overflow-y: scroll;
 }
 
 body {
@@ -140,6 +141,7 @@ body {
     margin: 0 auto;
     width: 50rem;
     margin-top: 3%;
+    padding: 0 5em;
 }
 
 h1 {
@@ -160,6 +162,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .mem_item {
@@ -170,9 +173,10 @@ input {
     font-size: 1.5em;
     order: 1;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.mem_item::after {
+.mem_item span {
     content: "+";
     font-weight: 900;
     color: white;
@@ -196,11 +200,13 @@ input {
     margin-top: 1em;
     border: 1px solid red;
     padding: 0.4em;
-    cursor: pointer;
 }
 
-.cssBayan:hover > .item > .radio > .mem_item::after{
+.cssBayan:hover > .item > .radio > .mem_item > span{
     opacity: 1;
+}
+input:hover ~ .radio > .mem_item{
+    color: red;
 }
 
 .radio:hover > .image{
@@ -214,6 +220,12 @@ input:checked ~ .radio > .image{
     margin-top: 1em;
 }
 
-input:checked ~ .radio > .mem_item::after{
+input:checked ~ .radio > .mem_item > span{
     transform: rotate(45deg);
+}
+input:checked ~ .radio > .mem_item{
+    color: red;
+}
+.radio:active{
+    opacity: 0.9;
 }
