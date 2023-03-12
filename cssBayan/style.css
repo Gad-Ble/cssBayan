@@ -69,7 +69,7 @@ input{
     position: absolute;
 }
 
-label {
+.mem_item {
     color: white;
     width: 100%;
     height: 100%;
@@ -84,7 +84,7 @@ label {
 .item:hover > label{
     color: red;
 }
-label::after{
+.mem_item::after{
         content: "+";
         font-weight: 900;
         color: black;
@@ -97,10 +97,11 @@ label::after{
     display: none;
     order: 3;
     width: 100%;
+    cursor: pointer;
 }
 
 .image-mem{
-    max-width: 40em;
+    max-width: 20em;
 }
 
 .item {
@@ -114,16 +115,19 @@ label::after{
     cursor: pointer;
 }
 
+.item:hover > .image{
+    display: flex;
+}
 .input:checked ~ .image{
     display: flex;
 }
-.input:checked ~ label {
+.input:checked ~ .mem_item {
     color: red;
 }
-.input:checked ~ label::after{
+.input:checked ~ .mem_item::after{
     transform: rotate(45deg);
 }
-.cssBayan:hover > .item > label::after{
+.cssBayan:hover > .item > .mem_item::after{
     color: white;
 }
 
